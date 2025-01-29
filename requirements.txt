@@ -1,0 +1,13 @@
+flask
+flask-cors
+scikit-learn
+pandas
+numpy
+matplotlib
+wordcloud
+datasets
+huggingface-hub
+sqlite3
+requests
+re
+pickle-mixin
