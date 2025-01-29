@@ -121,16 +121,18 @@ Expected Output:
 {
   "review_text": "I absolutely loved this movie. It was fantastic!"
 }
-```
+  ```
 
 6. Click Send.
 
 **Expected Response:**
-```
+
+   ```
 {
   "sentiment_prediction": "positive"
 }
-```
+
+   ```
 ## **Model Information**
 **Model Approach**
 The model is a Logistic Regression classifier trained on TF-IDF vectorized text data.
@@ -142,3 +144,69 @@ The model is a Logistic Regression classifier trained on TF-IDF vectorized text 
 | **Training Accuracy** | ~89%                            |
 | **Test Accuracy**    | ~88.5%                           |
 
+## **Deployment on Render**
+**Steps to Deploy on Render**
+1️⃣ Ensure all required files are pushed to GitHub:
+
+* app.py (Flask API)
+* requirements.txt
+* runtime.txt (Optional: To set Python version)
+* models/ (Trained models, e.g., logistic_regression_model.pkl, tfidf_vectorizer.pkl)
+2️⃣ Create a Free Account on Render
+  * Sign up at Render.
+3️⃣ Deploy a New Web Service
+* Click "New Web Service" → Connect GitHub Repo.
+* Select your repository (Sentiment_Analysis).
+* Set the following:
+   * Build Command:
+    ```
+    pip install -r requirements.txt
+   ```
+  * Start Command:
+  ```
+     gunicorn app:app
+  ```
+  
+* Click Deploy
+
+4️⃣ Wait for Deployment to Complete.
+
+* Once deployed, Render provides a public API URL.
+
+## **Testing the API After Deployment**
+ Once deployed, test the API using:
+✅ Postman
+1️⃣ Open Postman
+2️⃣ Create a New Request:
+
+* Method: POST
+* URL
+```
+https://your-api-name.onrender.com/predict
+
+```
+
+3️⃣ Go to the Headers Tab:
+* Add:
+```
+Key: Content-Type
+Value: application/json
+```
+4️⃣ Go to the Body Tab:
+
+* Select raw → Choose JSON.
+* Enter:
+```
+{
+  "review_text": "I absolutely loved this movie. It was fantastic!"
+}
+
+```
+5️⃣ Click "Send"
+✅ Expected Response:
+```
+{
+    "sentiment_prediction": "positive"
+}
+
+```
