@@ -151,6 +151,7 @@ The model is a Logistic Regression classifier trained on TF-IDF vectorized text 
 * app.py (Flask API)
 * requirements.txt
 * runtime.txt (Optional: To set Python version)
+* procfile
 * models/ (Trained models, e.g., logistic_regression_model.pkl, tfidf_vectorizer.pkl)
 2️⃣ Create a Free Account on Render
   * Sign up at Render.
