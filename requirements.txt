@@ -8,5 +8,4 @@ wordcloud
 datasets
 huggingface-hub
 requests
-re
 pickle-mixin
