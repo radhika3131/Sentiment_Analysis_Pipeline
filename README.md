@@ -145,6 +145,10 @@ The model is a Logistic Regression classifier trained on TF-IDF vectorized text 
 | **Test Accuracy**    | ~88.5%                           |
 
 ## **Deployment on Render**
+This Sentiment Analysis API is **deployed on Render** and is publicly accessible.
+
+ **[Live API URL](https://sentiment-analysis-pipeline-l9uf.onrender.com/predict)**
+
 **Steps to Deploy on Render**
 1️⃣ Ensure all required files are pushed to GitHub:
 
